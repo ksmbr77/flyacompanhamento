@@ -2,14 +2,17 @@ import { useState, useEffect } from "react";
 import CoverPage from "@/components/proposal/CoverPage";
 import DiagnosticPage from "@/components/proposal/DiagnosticPage";
 import ServicesPage from "@/components/proposal/ServicesPage";
+import StrategyPage from "@/components/proposal/StrategyPage";
 import AboutPage from "@/components/proposal/AboutPage";
 import ProcessPage from "@/components/proposal/ProcessPage";
 import ContactPage from "@/components/proposal/ContactPage";
 
+const WA_LINK = "https://wa.me/5579998615349?text=Ol%C3%A1%2C%20quero%20aprovar%20a%20proposta%20de%20Acompanhamento%20Estrat%C3%A9gico%20da%20Fly%20Agency!%20Vamos%20come%C3%A7ar!";
+
 const navItems = [
   { label: "Diagnóstico", href: "#diagnostico" },
   { label: "Pilares", href: "#pilares" },
-  { label: "Incluso", href: "#incluso" },
+  { label: "Estratégia", href: "#estrategia" },
   { label: "Investimento", href: "#investimento" },
 ];
 
@@ -45,11 +48,11 @@ const Index = () => {
           </div>
 
           <a
-            href="https://wa.link/r4rqk9"
+            href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            style={{ background: 'var(--gradient-primary)', boxShadow: scrolled ? '0 0 30px hsl(265 85% 58% / 0.3)' : 'none' }}
+            className="px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white transition-all duration-300 hover:scale-105"
+            style={{ background: 'var(--gradient-primary)' }}
           >
             APROVAR →
           </a>
@@ -61,6 +64,7 @@ const Index = () => {
         <CoverPage />
         <DiagnosticPage />
         <ServicesPage />
+        <StrategyPage />
         <AboutPage />
         <ProcessPage />
         <ContactPage />

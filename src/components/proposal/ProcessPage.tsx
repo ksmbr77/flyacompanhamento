@@ -57,7 +57,7 @@ const ProcessPage = () => {
               </div>
 
               <a
-                href="https://wa.link/r4rqk9"
+                href="https://wa.me/5579998615349?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20plano%20mensal%20de%20Acompanhamento%20Estrat%C3%A9gico%20da%20Fly%20Agency!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border border-primary/40 text-primary font-semibold text-sm hover:bg-primary/10 transition-all duration-300"
@@ -74,7 +74,7 @@ const ProcessPage = () => {
               <div className="absolute top-0 right-0">
                 <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-bl-xl text-xs font-bold uppercase" style={{ background: 'var(--gradient-primary)' }}>
                   <Sparkles className="w-3 h-3" />
-                  Melhor Oferta
+                  Oferta Exclusiva
                 </div>
               </div>
 
@@ -85,7 +85,7 @@ const ProcessPage = () => {
                 <span className="text-5xl sm:text-6xl font-black gradient-text tracking-tight">6.000</span>
               </div>
               <p className="text-sm text-muted-foreground mb-2">pagamento único · 3 meses</p>
-              <p className="text-xs text-primary font-semibold mb-8">Economia de R$ 900 ✨</p>
+              <p className="text-xs text-primary font-semibold mb-8">Economia de R$ 900</p>
 
               <div className="space-y-3 mb-8">
                 {features.map((item, i) => (
@@ -97,10 +97,10 @@ const ProcessPage = () => {
               </div>
 
               <a
-                href="https://wa.link/r4rqk9"
+                href="https://wa.me/5579998615349?text=Ol%C3%A1%2C%20quero%20aproveitar%20a%20oferta%20exclusiva%20%C3%A0%20vista%20do%20Acompanhamento%20Estrat%C3%A9gico%20da%20Fly%20Agency!"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-white text-sm transition-all duration-300 hover:scale-[1.02] glow-effect"
+                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-white text-sm transition-all duration-300 hover:scale-[1.02]"
                 style={{ background: 'var(--gradient-primary)' }}
               >
                 Quero essa oferta <ArrowRight className="w-4 h-4" />

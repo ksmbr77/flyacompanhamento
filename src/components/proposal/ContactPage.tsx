@@ -5,7 +5,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 const contacts = [
   { icon: <Globe className="w-5 h-5" />, label: "Website", value: "flyagency.pro", href: "https://flyagency.pro" },
   { icon: <Instagram className="w-5 h-5" />, label: "Instagram", value: "@flyagency.digital", href: "https://instagram.com/flyagency.digital" },
-  { icon: <MessageCircle className="w-5 h-5" />, label: "WhatsApp", value: "Falar com a equipe", href: "https://wa.link/r4rqk9" },
+  { icon: <MessageCircle className="w-5 h-5" />, label: "WhatsApp", value: "Falar com a equipe", href: "https://wa.me/5579998615349?text=Ol%C3%A1%2C%20vim%20pela%20proposta%20da%20Fly%20Agency!" },
 ];
 
 const ContactPage = () => {
@@ -55,10 +55,10 @@ const ContactPage = () => {
 
         {/* Main CTA */}
         <a
-          href="https://wa.link/r4rqk9"
+          href="https://wa.me/5579998615349?text=Ol%C3%A1%2C%20quero%20aprovar%20a%20proposta%20de%20Acompanhamento%20Estrat%C3%A9gico%20da%20Fly%20Agency!%20Vamos%20come%C3%A7ar!"
           target="_blank"
           rel="noopener noreferrer"
-          className={`reveal animation-delay-600 ${isVisible ? 'visible' : ''} inline-flex items-center gap-2 px-10 py-4 rounded-xl font-bold text-white text-base sm:text-lg transition-all duration-300 hover:scale-105 glow-effect animate-glow-pulse`}
+          className={`reveal animation-delay-600 ${isVisible ? 'visible' : ''} inline-flex items-center gap-2 px-10 py-4 rounded-xl font-bold text-white text-base sm:text-lg transition-all duration-300 hover:scale-105`}
           style={{ background: 'var(--gradient-primary)' }}
         >
           Aprovar Proposta →
