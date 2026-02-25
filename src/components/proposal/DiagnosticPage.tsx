@@ -11,9 +11,9 @@ const problems = [
   },
   {
     icon: <Users className="w-5 h-5" />,
-    stat: "5x",
+    stat: "Custa 5x",
     title: "mais caro conquistar",
-    description: "um novo cliente do que reter os atuais — sem processo comercial, o custo dispara.",
+    description: "um novo cliente do que reter os atuais. Sem processo comercial, o custo dispara.",
   },
   {
     icon: <Clock className="w-5 h-5" />,
