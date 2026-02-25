@@ -44,20 +44,14 @@ const CoverPage = () => {
           Uma máquina de vendas implementada em <span className="text-foreground font-bold">45 dias</span> — resultados a partir do primeiro mês.
         </p>
 
-        {/* CTAs */}
-        <div className={`reveal animation-delay-600 ${isVisible ? 'visible' : ''} flex flex-col sm:flex-row gap-4 w-full sm:w-auto`}>
-          <a
-            href="#investimento"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-sm sm:text-base transition-all duration-300 hover:scale-105 glow-effect"
-            style={{ background: 'var(--gradient-primary)' }}
-          >
-            Ver Investimento →
-          </a>
+        {/* CTA */}
+        <div className={`reveal animation-delay-600 ${isVisible ? 'visible' : ''}`}>
           <a
             href="#pilares"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold border border-border bg-card/60 backdrop-blur-sm hover:bg-secondary hover:border-primary/30 transition-all duration-300 text-sm sm:text-base"
+            className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl font-bold text-white text-sm sm:text-base transition-all duration-300 hover:scale-105"
+            style={{ background: 'var(--gradient-primary)' }}
           >
-            ▶ Explorar Proposta
+            Explorar Proposta →
           </a>
         </div>
       </div>
