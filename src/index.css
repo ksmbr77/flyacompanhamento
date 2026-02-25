@@ -45,9 +45,9 @@
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    --shadow-glow: 0 0 60px hsl(265 85% 58% / 0.25);
-    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.5);
-    --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 80px hsl(265 85% 58% / 0.15);
+    --shadow-card: 0 4px 30px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.4);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -128,35 +128,35 @@
   }
 
   .page-section {
-    @apply min-h-screen flex flex-col justify-center relative overflow-hidden px-5 sm:px-8 md:px-12 lg:px-20 py-20 md:py-24;
+    @apply min-h-screen flex flex-col justify-center relative overflow-hidden px-5 sm:px-8 md:px-12 lg:px-20 py-16 md:py-20;
   }
 
   .blob-purple {
     position: absolute;
     pointer-events: none;
-    background: radial-gradient(ellipse, hsl(265 85% 50% / 0.2) 0%, transparent 70%);
-    filter: blur(100px);
+    background: radial-gradient(ellipse, hsl(265 85% 50% / 0.1) 0%, transparent 70%);
+    filter: blur(140px);
   }
 
   .blob-pink {
     position: absolute;
     pointer-events: none;
-    background: radial-gradient(ellipse, hsl(290 100% 55% / 0.12) 0%, transparent 70%);
-    filter: blur(120px);
+    background: radial-gradient(ellipse, hsl(290 100% 55% / 0.06) 0%, transparent 70%);
+    filter: blur(160px);
   }
 
   .grid-pattern {
     background-image: 
-      linear-gradient(hsl(265 85% 58% / 0.025) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(265 85% 58% / 0.025) 1px, transparent 1px);
-    background-size: 80px 80px;
+      linear-gradient(hsl(265 85% 58% / 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(265 85% 58% / 0.015) 1px, transparent 1px);
+    background-size: 100px 100px;
   }
 
   /* Scroll reveal classes */
   .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal.visible {
@@ -166,8 +166,8 @@
 
   .reveal-left {
     opacity: 0;
-    transform: translateX(-40px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-24px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal-left.visible {
@@ -177,8 +177,8 @@
 
   .reveal-right {
     opacity: 0;
-    transform: translateX(40px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(24px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal-right.visible {
@@ -188,8 +188,8 @@
 
   .reveal-scale {
     opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(0.95);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal-scale.visible {
