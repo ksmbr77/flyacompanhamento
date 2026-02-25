@@ -4,7 +4,7 @@ import { Check, Sparkles, ArrowRight } from "lucide-react";
 const ProcessPage = () => {
   const { ref, isVisible } = useScrollAnimation();
 
-  const features = [
+  const monthlyFeatures = [
     "3 Pilares completos integrados",
     "Setup + Infraestrutura total",
     "Exclusividade regional do segmento",
@@ -12,7 +12,12 @@ const ProcessPage = () => {
     "Relatórios quinzenais detalhados",
     "Grupo exclusivo no WhatsApp",
     "Treinamento comercial completo",
+  ];
+
+  const exclusiveFeatures = [
+    ...monthlyFeatures,
     "Reuniões estratégicas quinzenais",
+    "Consultoria individual de posicionamento",
   ];
 
   return (
@@ -48,7 +53,7 @@ const ProcessPage = () => {
               <p className="text-sm text-muted-foreground mb-8">por mês · contrato de 3 meses</p>
 
               <div className="space-y-3 mb-8">
-                {features.slice(0, 6).map((item, i) => (
+                {monthlyFeatures.map((item, i) => (
                   <div key={i} className="flex items-center gap-3 text-sm">
                     <Check className="w-4 h-4 text-primary shrink-0" />
                     <span className="text-muted-foreground">{item}</span>
@@ -88,7 +93,7 @@ const ProcessPage = () => {
               <p className="text-xs text-primary font-semibold mb-8">Economia de R$ 900</p>
 
               <div className="space-y-3 mb-8">
-                {features.map((item, i) => (
+                {exclusiveFeatures.map((item, i) => (
                   <div key={i} className="flex items-center gap-3 text-sm">
                     <Check className="w-4 h-4 text-primary shrink-0" />
                     <span className="text-muted-foreground">{item}</span>
