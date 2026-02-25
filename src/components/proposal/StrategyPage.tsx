@@ -72,7 +72,7 @@ const StrategyPage = () => {
                   <h3 className="font-bold text-sm sm:text-base mb-1 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>
-                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 opacity-60 group-hover:opacity-100 transition-all duration-300">
                   {item.icon}
                 </div>
               </div>

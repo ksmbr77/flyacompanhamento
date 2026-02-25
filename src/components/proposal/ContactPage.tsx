@@ -39,6 +39,7 @@ const ContactPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={`reveal ${isVisible ? 'visible' : ''} flex items-center gap-4 p-4 rounded-xl bg-card/60 border border-border/40 hover:border-primary/30 hover:bg-card/80 transition-all duration-400 group`}
+              aria-label={`${c.label}: ${c.value}`}
               style={{ transitionDelay: `${(idx + 2) * 100}ms` }}
             >
               <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 shrink-0">
@@ -59,6 +60,7 @@ const ContactPage = () => {
           target="_blank"
           rel="noopener noreferrer"
           className={`reveal animation-delay-600 ${isVisible ? 'visible' : ''} inline-flex items-center gap-2 px-10 py-4 rounded-xl font-bold text-white text-base sm:text-lg transition-all duration-300 hover:scale-105`}
+          aria-label="Aprovar proposta via WhatsApp"
           style={{ background: 'var(--gradient-primary)' }}
         >
           Aprovar Proposta →

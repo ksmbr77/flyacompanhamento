@@ -55,7 +55,7 @@ const ServicesPage = () => {
       <div className="blob-pink w-[800px] h-[800px] -top-60 -left-60" />
       <div className="blob-purple w-[600px] h-[600px] bottom-0 right-0" />
 
-      <div className="relative z-10 max-w-6xl mx-auto w-full">
+      <div className="relative z-10 max-w-5xl mx-auto w-full">
         {/* Header */}
         <div className="mb-14 text-center">
           <p className={`reveal ${isVisible ? 'visible' : ''} text-primary text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4`}>

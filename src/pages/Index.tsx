@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import CoverPage from "@/components/proposal/CoverPage";
 import DiagnosticPage from "@/components/proposal/DiagnosticPage";
 import ServicesPage from "@/components/proposal/ServicesPage";
@@ -18,12 +19,22 @@ const navItems = [
 
 const Index = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close menu on scroll
+  useEffect(() => {
+    if (menuOpen) {
+      const close = () => setMenuOpen(false);
+      window.addEventListener("scroll", close, { passive: true });
+      return () => window.removeEventListener("scroll", close);
+    }
+  }, [menuOpen]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -45,6 +56,15 @@ const Index = () => {
                 </a>
               ))}
             </div>
+
+            {/* Hamburger button */}
+            <button
+              className="md:hidden p-1 text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
 
           <a
@@ -53,10 +73,29 @@ const Index = () => {
             rel="noopener noreferrer"
             className="px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold text-white transition-all duration-300 hover:scale-105"
             style={{ background: 'var(--gradient-primary)' }}
+            aria-label="Aprovar proposta via WhatsApp"
           >
             APROVAR →
           </a>
         </div>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="md:hidden mt-2 mx-4 sm:mx-6 max-w-6xl lg:mx-auto">
+            <div className="rounded-2xl border border-border/80 bg-background/95 backdrop-blur-xl shadow-xl p-4 space-y-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-4 py-3 rounded-xl text-sm text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-all duration-200"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Content */}
