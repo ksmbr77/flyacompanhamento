@@ -1,40 +1,37 @@
 
 
-## Plano de Melhorias - Landing Page Fly Agency
+## Melhorias e Correções Gerais
 
-### 1. Remover botao "Ver Investimento" da CoverPage
+### 1. Limpar CSS boilerplate do Vite (App.css)
+O arquivo `App.css` ainda contém estilos do template Vite (`.logo`, `.card`, `.read-the-docs`, `@keyframes logo-spin`) que não são usados. Vamos remover tudo e manter apenas o `#root { width: 100%; }`.
 
-O botao principal da capa passara a ser apenas **"Explorar Proposta"** (que leva para os pilares). Isso garante que o cliente percorra toda a proposta antes de ver o preco.
+### 2. Menu mobile (hamburger)
+No mobile, os links de navegação ficam escondidos (`hidden md:flex`). Vamos adicionar um botão hamburger que abre um menu dropdown com os links, para que o cliente consiga navegar entre as seções no celular.
 
-### 2. Atualizar CTA da ContactPage
+### 3. StrategyPage - Ícones visíveis no mobile
+Os ícones à direita de cada card de estratégia usam `opacity-0 group-hover:opacity-100`, o que significa que nunca aparecem no mobile (não existe hover). Vamos torná-los sempre visíveis.
 
-Trocar a mensagem final para algo mais positivo e orientado ao fechamento:
-- Titulo: "Vamos transformar seu negocio?"  
-- Subtitulo: "Agende uma consultoria gratuita e descubra como transformar seu negocio nos proximos 90 dias."
+### 4. Remover arquivos não utilizados
+- `src/components/NavLink.tsx` - não é importado em nenhum lugar
+- `src/components/proposal/CasesPage.tsx` - não é renderizado no Index e usa classes CSS antigas que não existem (`pdf-page`, `section-title`, `section-subtitle`)
 
-### 3. Corrigir responsividade e centralizacao do scroll
+### 5. Consistência de largura máxima
+Padronizar o `max-w` das seções para maior consistência visual:
+- Cover, Contact: `max-w-4xl` (conteúdo centralizado)
+- Demais seções: `max-w-5xl`
 
-- Remover `max-width: 1280px` e `padding: 2rem` do `App.css` (`#root`) que interfere no layout
-- Garantir que todas as secoes usem `mx-auto` com `w-full` corretamente
-- Ajustar o indicador de "Scroll" na CoverPage para ficar centralizado
-- Revisar padding das secoes no mobile
-
-### 4. Remover efeito visual do botao "Aprovar Proposta"
-
-Remover `glow-effect` e efeitos de hover exagerados dos botoes de aprovacao na navbar e ContactPage.
-
-### 5. Atualizar link do WhatsApp
-
-Garantir que todos os links usem o numero `5579998615349` com mensagens personalizadas para cada CTA.
+### 6. Melhorar acessibilidade dos links
+Adicionar `aria-label` nos botões de WhatsApp e links de contato para melhor acessibilidade.
 
 ---
 
-### Detalhes Tecnicos
+### Detalhes Técnicos
 
 **Arquivos a editar:**
 
-1. **`src/App.css`** - Remover estilos do `#root` que limitam largura e adicionam padding desnecessario
-2. **`src/components/proposal/CoverPage.tsx`** - Remover botao "Ver Investimento", manter apenas "Explorar Proposta" como CTA principal com estilo gradient
-3. **`src/components/proposal/ContactPage.tsx`** - Atualizar copy do CTA final, remover efeitos de hover exagerados, atualizar ano do copyright para 2026
-4. **`src/pages/Index.tsx`** - Remover "Investimento" da navegacao visivel (o cliente chega la naturalmente pelo scroll), remover `glow-effect` do botao APROVAR na navbar
+1. **`src/App.css`** - Remover estilos boilerplate do Vite (logo, card, read-the-docs, logo-spin)
+2. **`src/pages/Index.tsx`** - Adicionar menu hamburger para mobile com estado de aberto/fechado
+3. **`src/components/proposal/StrategyPage.tsx`** - Mudar ícones de `opacity-0 group-hover:opacity-100` para `opacity-60 group-hover:opacity-100` (visíveis no mobile)
+4. **`src/components/proposal/ContactPage.tsx`** - Adicionar `aria-label` nos links
+5. **Remover** `src/components/NavLink.tsx` e `src/components/proposal/CasesPage.tsx` (não utilizados)
 
