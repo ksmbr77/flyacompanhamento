@@ -1,87 +1,112 @@
-import { Target, MessageCircle, Palette, ChevronRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Target, MessageCircle, Palette, ChevronRight, Zap, BarChart3, RefreshCw, FileText, Phone, UserCheck, BrainCircuit, Megaphone, Eye, Layers } from "lucide-react";
 
 const pillars = [
   {
     number: "01",
     icon: <Target className="w-7 h-7" />,
+    color: "from-primary to-accent",
     title: "Geração de Demanda",
     subtitle: "Gestão de Tráfego Pago (Meta Ads)",
+    description: "Criamos campanhas estratégicas para atrair clientes qualificados diariamente para o seu negócio.",
     items: [
-      "Planejamento de todas as campanhas",
-      "Otimização Diária e Semanais",
-      "Testes e Validação nas campanhas",
-      "Remarketing",
-      "Roteiros para Anúncios",
+      { icon: <Layers className="w-3.5 h-3.5" />, text: "Planejamento completo de campanhas" },
+      { icon: <BarChart3 className="w-3.5 h-3.5" />, text: "Otimização diária e semanal" },
+      { icon: <Zap className="w-3.5 h-3.5" />, text: "Testes A/B e validação contínua" },
+      { icon: <RefreshCw className="w-3.5 h-3.5" />, text: "Remarketing inteligente" },
+      { icon: <FileText className="w-3.5 h-3.5" />, text: "Roteiros para anúncios de alta conversão" },
     ],
   },
   {
     number: "02",
     icon: <MessageCircle className="w-7 h-7" />,
+    color: "from-primary to-primary-glow",
     title: "Conversão",
-    subtitle: "Treinamento Comercial",
+    subtitle: "Treinamento Comercial Completo",
+    description: "Transformamos seus leads em clientes com processos e scripts validados de atendimento.",
     items: [
-      "WhatsApp Business otimizado",
-      "Scripts de atendimento",
-      "Processos de follow-up",
-      "Técnicas de fechamento",
+      { icon: <Phone className="w-3.5 h-3.5" />, text: "Treinamento de atendimento via WhatsApp" },
+      { icon: <UserCheck className="w-3.5 h-3.5" />, text: "Scripts de abordagem e fechamento" },
+      { icon: <BrainCircuit className="w-3.5 h-3.5" />, text: "Técnicas de persuasão e follow-up" },
+      { icon: <RefreshCw className="w-3.5 h-3.5" />, text: "Processos de recuperação de leads" },
     ],
   },
   {
     number: "03",
     icon: <Palette className="w-7 h-7" />,
+    color: "from-accent to-primary-glow",
     title: "Posicionamento Growth",
-    subtitle: "Branding & Autoridade",
+    subtitle: "Branding & Autoridade Digital",
+    description: "Posicionamos sua marca como referência na sua região e segmento de atuação.",
     items: [
-      "Posicionamento de marca",
-      "Identidade visual digital",
-      "Conteúdo estratégico",
-      "Presença nas redes sociais",
+      { icon: <Megaphone className="w-3.5 h-3.5" />, text: "Posicionamento estratégico de marca" },
+      { icon: <Eye className="w-3.5 h-3.5" />, text: "Presença digital consolidada" },
+      { icon: <Layers className="w-3.5 h-3.5" />, text: "Conteúdo estratégico para autoridade" },
+      { icon: <BarChart3 className="w-3.5 h-3.5" />, text: "Crescimento estruturado e mensurável" },
     ],
   },
 ];
 
 const ServicesPage = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="page-section grid-pattern" id="pilares">
-      <div className="blob-pink w-[700px] h-[700px] -top-40 -left-40" />
-      <div className="blob-purple w-[500px] h-[500px] bottom-0 right-0" />
+    <section className="page-section grid-pattern" id="pilares" ref={ref}>
+      <div className="blob-pink w-[800px] h-[800px] -top-60 -left-60" />
+      <div className="blob-purple w-[600px] h-[600px] bottom-0 right-0" />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
+        {/* Header */}
         <div className="mb-14 text-center">
-          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3 animate-fade-in">O que você recebe</p>
-          <h2 className="text-4xl md:text-5xl font-black animate-fade-in animation-delay-150">
-            Os 3 <span className="gradient-text">Pilares</span>
+          <p className={`reveal ${isVisible ? 'visible' : ''} text-primary text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4`}>
+            A Solução Completa
+          </p>
+          <h2 className={`reveal animation-delay-100 ${isVisible ? 'visible' : ''} text-3xl sm:text-4xl md:text-5xl font-black mb-4`}>
+            Os 3 Pilares do <span className="gradient-text">Crescimento</span>
           </h2>
+          <p className={`reveal animation-delay-200 ${isVisible ? 'visible' : ''} text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base`}>
+            Um sistema integrado que trabalha em todas as frentes do seu negócio — da geração de demanda até o posicionamento da marca.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Pillars */}
+        <div className="space-y-6 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-6">
           {pillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="card-elevated gradient-border group hover:scale-[1.02] transition-transform duration-300 animate-fade-in"
-              style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+              className={`reveal-scale ${isVisible ? 'visible' : ''} group`}
+              style={{ transitionDelay: `${(idx + 2) * 150}ms` }}
             >
-              <div className="relative z-10">
-                {/* Number */}
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-3xl font-black text-primary/30">
-                    {pillar.number}
-                  </span>
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
-                    {pillar.icon}
-                  </div>
-                </div>
+              <div className="h-full rounded-2xl bg-card/80 border border-border/50 hover:border-primary/30 transition-all duration-500 overflow-hidden">
+                {/* Top accent bar */}
+                <div className={`h-1 w-full bg-gradient-to-r ${pillar.color}`} />
 
-                <h3 className="text-xl font-bold mb-1">{pillar.title}</h3>
-                <p className="text-sm text-muted-foreground mb-5">{pillar.subtitle}</p>
-
-                <div className="space-y-2.5">
-                  {pillar.items.map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 text-sm">
-                      <ChevronRight className="w-3.5 h-3.5 text-primary shrink-0" />
-                      <span className="text-muted-foreground group-hover:text-foreground transition-colors">{item}</span>
+                <div className="p-6 sm:p-7">
+                  {/* Number & Icon */}
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-4xl font-black text-border">
+                      {pillar.number}
+                    </span>
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${pillar.color} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      {pillar.icon}
                     </div>
-                  ))}
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-black mb-1">{pillar.title}</h3>
+                  <p className="text-xs sm:text-sm text-primary font-medium mb-3">{pillar.subtitle}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">{pillar.description}</p>
+
+                  {/* Items */}
+                  <div className="space-y-3">
+                    {pillar.items.map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 text-xs sm:text-sm group/item">
+                        <div className="w-6 h-6 rounded-md bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover/item:bg-primary/20 transition-colors">
+                          {item.icon}
+                        </div>
+                        <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{item.text}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
