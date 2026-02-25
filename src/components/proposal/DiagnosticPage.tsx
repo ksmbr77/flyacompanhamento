@@ -57,7 +57,7 @@ const DiagnosticPage = () => {
             <div
               key={idx}
               className={`reveal-scale ${isVisible ? 'visible' : ''} group`}
-              style={{ transitionDelay: `${(idx + 2) * 120}ms` }}
+              style={{ transitionDelay: `${(idx + 2) * 80}ms` }}
             >
               <div className="h-full p-6 rounded-2xl bg-card/80 border border-border/50 hover:border-primary/30 transition-all duration-500 hover:bg-card">
                 <div className="flex items-start gap-4">

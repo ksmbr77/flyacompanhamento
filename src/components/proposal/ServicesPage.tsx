@@ -75,7 +75,7 @@ const ServicesPage = () => {
             <div
               key={idx}
               className={`reveal-scale ${isVisible ? 'visible' : ''} group`}
-              style={{ transitionDelay: `${(idx + 2) * 150}ms` }}
+              style={{ transitionDelay: `${(idx + 2) * 100}ms` }}
             >
               <div className="h-full rounded-2xl bg-card/80 border border-border/50 hover:border-primary/30 transition-all duration-500 overflow-hidden">
                 {/* Top accent bar */}
