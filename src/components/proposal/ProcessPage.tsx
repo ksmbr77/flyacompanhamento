@@ -42,7 +42,7 @@ const ProcessPage = () => {
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-10">
           {/* Monthly */}
-          <div className={`reveal-left ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '300ms' }}>
+          <div className={`reveal-left ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '180ms' }}>
             <div className="h-full p-7 sm:p-8 rounded-2xl bg-card/80 border border-border/50 hover:border-primary/20 transition-all duration-500">
               <p className="text-xs text-muted-foreground uppercase tracking-widest mb-5 font-medium">Mensal</p>
               
@@ -73,7 +73,7 @@ const ProcessPage = () => {
           </div>
 
           {/* À Vista */}
-          <div className={`reveal-right ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '400ms' }}>
+          <div className={`reveal-right ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '240ms' }}>
             <div className="h-full relative p-7 sm:p-8 rounded-2xl border border-primary/30 overflow-hidden transition-all duration-500 hover:border-primary/50" style={{ background: 'var(--gradient-card)' }}>
               {/* Best offer badge */}
               <div className="absolute top-0 right-0">

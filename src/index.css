@@ -155,8 +155,8 @@
   /* Scroll reveal classes */
   .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(14px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal.visible {
@@ -166,8 +166,8 @@
 
   .reveal-left {
     opacity: 0;
-    transform: translateX(-24px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-16px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal-left.visible {
@@ -177,8 +177,8 @@
 
   .reveal-right {
     opacity: 0;
-    transform: translateX(24px);
-    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(16px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal-right.visible {
@@ -188,8 +188,8 @@
 
   .reveal-scale {
     opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(0.97);
+    transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .reveal-scale.visible {
@@ -200,27 +200,27 @@
 
 @layer utilities {
   .animation-delay-100 {
-    transition-delay: 100ms;
+    transition-delay: 60ms;
   }
   .animation-delay-200 {
-    transition-delay: 200ms;
+    transition-delay: 120ms;
   }
   .animation-delay-300 {
-    transition-delay: 300ms;
+    transition-delay: 180ms;
   }
   .animation-delay-400 {
-    transition-delay: 400ms;
+    transition-delay: 240ms;
   }
   .animation-delay-500 {
-    transition-delay: 500ms;
+    transition-delay: 300ms;
   }
   .animation-delay-600 {
-    transition-delay: 600ms;
+    transition-delay: 360ms;
   }
   .animation-delay-700 {
-    transition-delay: 700ms;
+    transition-delay: 420ms;
   }
   .animation-delay-800 {
-    transition-delay: 800ms;
+    transition-delay: 480ms;
   }
 }

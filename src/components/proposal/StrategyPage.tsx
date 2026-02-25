@@ -62,7 +62,7 @@ const StrategyPage = () => {
             <div
               key={idx}
               className={`reveal-left ${isVisible ? 'visible' : ''} group`}
-              style={{ transitionDelay: `${(idx + 2) * 120}ms` }}
+              style={{ transitionDelay: `${(idx + 2) * 80}ms` }}
             >
               <div className="flex items-start gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-card/60 border border-border/40 hover:border-primary/30 hover:bg-card/80 transition-all duration-500">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white shrink-0 font-bold text-sm sm:text-base group-hover:scale-110 transition-transform duration-300">

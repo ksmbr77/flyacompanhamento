@@ -62,7 +62,7 @@ const AboutPage = () => {
             <div
               key={idx}
               className={`reveal-scale ${isVisible ? 'visible' : ''} group`}
-              style={{ transitionDelay: `${(idx + 2) * 100}ms` }}
+              style={{ transitionDelay: `${(idx + 2) * 70}ms` }}
             >
               <div className="h-full p-5 sm:p-6 rounded-2xl bg-card/60 border border-border/40 hover:border-primary/30 hover:bg-card/80 transition-all duration-500">
                 <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 text-primary group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
