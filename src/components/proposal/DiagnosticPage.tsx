@@ -23,9 +23,9 @@ const problems = [
   },
   {
     icon: <AlertTriangle className="w-5 h-5" />,
-    stat: "0",
+    stat: "Fraco",
     title: "posicionamento digital",
-    description: "significa que seus concorrentes ocupam o espaço que deveria ser seu na mente do cliente.",
+    description: "sem uma estratégia clara de branding, sua marca não se diferencia e perde força frente à concorrência.",
   },
 ];
 
