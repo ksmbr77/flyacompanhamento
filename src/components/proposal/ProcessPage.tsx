@@ -1,80 +1,71 @@
-interface ProcessStepProps {
-  number: number;
-  title: string;
-  description: string;
-}
-
-const ProcessStep = ({ number, title, description }: ProcessStepProps) => (
-  <div className="flex gap-4 items-start">
-    <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center shrink-0 font-bold text-white">
-      {number}
-    </div>
-    <div className="flex-1">
-      <h3 className="text-xl font-bold gradient-text mb-2">{title}</h3>
-      <p className="text-muted-foreground leading-relaxed">{description}</p>
-    </div>
-  </div>
-);
+import { Check } from "lucide-react";
 
 const ProcessPage = () => {
-  const steps = [
-    {
-      number: 1,
-      title: "Briefing",
-      description: "Coletamos objetivos e informações para alinhar expectativas e entender profundamente seu negócio.",
-    },
-    {
-      number: 2,
-      title: "Estratégia",
-      description: "Criamos um plano personalizado, com metas claras e estratégias para o tráfego pago e marketing digital.",
-    },
-    {
-      number: 3,
-      title: "Execução",
-      description: "Produzimos materiais de qualidade e configuramos campanhas com CRM integrado. Monitoramos métricas e otimizamos continuamente.",
-    },
-    {
-      number: 4,
-      title: "Monitoramento e Resultados",
-      description: "Relatórios quinzenais com métricas detalhadas. Mensuração completa mensal. Resultados expressivos em 45 a 60 dias.",
-    },
-  ];
-
   return (
-    <section className="pdf-page relative overflow-hidden">
-      {/* Abstract shapes */}
-      <div className="abstract-shape blob-purple w-[500px] h-[500px] top-1/3 -right-60" />
-      <div className="abstract-shape blob-pink w-[400px] h-[400px] -bottom-20 left-0" />
+    <section className="page-section grid-pattern" id="investimento">
+      <div className="blob-purple w-[600px] h-[600px] top-1/3 -left-60" />
+      <div className="blob-pink w-[500px] h-[500px] -bottom-20 right-0" />
 
-      <div className="relative z-10 max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black mb-2">NOSSO PROCESSO</h2>
-          <h3 className="text-4xl md:text-5xl font-black gradient-text font-display italic">de trabalho</h3>
-        </div>
+      <div className="relative z-10 max-w-3xl mx-auto w-full text-center">
+        <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3 animate-fade-in">Investimento</p>
+        <h2 className="text-4xl md:text-5xl font-black mb-4 animate-fade-in animation-delay-150">
+          Quanto <span className="gradient-text">Custa?</span>
+        </h2>
+        <p className="text-muted-foreground mb-12 max-w-xl mx-auto animate-fade-in animation-delay-300">
+          Investimento transparente com retorno previsível. Escolha a forma de pagamento ideal para você.
+        </p>
 
-        {/* Steps */}
-        <div className="space-y-8">
-          {steps.map((step, index) => (
-            <div 
-              key={index}
-              className="animate-slide-in-left"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <ProcessStep {...step} />
-              {index < steps.length - 1 && (
-                <div className="ml-5 mt-4 h-8 w-px bg-gradient-to-b from-primary to-transparent" />
-              )}
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {/* Monthly */}
+          <div className="card-elevated gradient-border p-8 animate-fade-in animation-delay-300">
+            <div className="relative z-10">
+              <p className="text-sm text-muted-foreground mb-1 uppercase tracking-wider">Mensal</p>
+              <div className="flex items-baseline justify-center gap-1 mb-2">
+                <span className="text-sm text-muted-foreground">R$</span>
+                <span className="text-5xl font-black gradient-text">2.300</span>
+                <span className="text-muted-foreground">/mês</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-6">Contrato mínimo de 90 dias</p>
+
+              <div className="space-y-3 text-left">
+                {["3 Pilares completos", "Setup + Infraestrutura", "Exclusividade regional", "Suporte prioritário", "Relatórios quinzenais"].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 text-sm">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* One-time */}
+          <div className="relative card-elevated p-8 animate-fade-in animation-delay-500" style={{ background: 'linear-gradient(145deg, hsl(265 40% 16%), hsl(240 10% 6%))' }}>
+            <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase">
+              Melhor oferta
+            </div>
+            <p className="text-sm text-muted-foreground mb-1 uppercase tracking-wider">À Vista</p>
+            <div className="flex items-baseline justify-center gap-1 mb-2">
+              <span className="text-sm text-muted-foreground">R$</span>
+              <span className="text-5xl font-black gradient-text">6.000</span>
+            </div>
+            <p className="text-sm text-muted-foreground mb-6">Pagamento único · 90 dias</p>
+
+            <div className="space-y-3 text-left">
+              {["Tudo do plano mensal", "Economia de R$ 900", "Prioridade no onboarding", "Bônus: Consultoria extra", "Garantia estendida"].map((item, i) => (
+                <div key={i} className="flex items-center gap-2 text-sm">
+                  <Check className="w-4 h-4 text-primary shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Bottom highlight */}
-        <div className="mt-12 p-6 rounded-2xl bg-gradient-primary text-white text-center">
-          <p className="text-lg font-semibold">
-            Esse processo garante eficiência, ajustes contínuos e resultados sólidos.
-          </p>
-        </div>
+        {/* Note */}
+        <p className="text-sm text-muted-foreground animate-fade-in animation-delay-700">
+          + Investimento em anúncios à parte (recomendado: R$ 1.200 – R$ 2.000/mês)
+        </p>
       </div>
     </section>
   );

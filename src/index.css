@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,52 +6,49 @@
 
 @layer base {
   :root {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 100%;
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 100%;
+    --card: 240 8% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 240 8% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 270 80% 60%;
+    --primary: 265 85% 58%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 280 100% 70%;
+    --primary-glow: 275 100% 65%;
 
-    --secondary: 270 50% 20%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 265 30% 14%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 240 6% 12%;
+    --muted-foreground: 240 5% 55%;
 
-    --accent: 270 100% 65%;
+    --accent: 265 100% 62%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 270 30% 25%;
-    --input: 270 30% 20%;
-    --ring: 270 80% 60%;
+    --border: 240 6% 16%;
+    --input: 240 6% 14%;
+    --ring: 265 85% 58%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(270 80% 60%) 0%, hsl(300 100% 70%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(270 30% 15%) 0%, hsl(0 0% 8%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(270 80% 60% / 0.3) 0%, transparent 70%);
-    --gradient-border: linear-gradient(135deg, hsl(270 80% 60%) 0%, hsl(300 100% 70%) 50%, hsl(270 80% 60%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(265 85% 58%) 0%, hsl(290 100% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(265 20% 12%) 0%, hsl(240 10% 6%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(265 85% 58% / 0.2) 0%, transparent 70%);
+    --gradient-border: linear-gradient(135deg, hsl(265 85% 58%) 0%, hsl(290 100% 65%) 50%, hsl(265 85% 58%) 100%);
+    --gradient-red: linear-gradient(135deg, hsl(0 85% 55%) 0%, hsl(15 90% 50%) 100%);
 
-    /* Typography */
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Montserrat', sans-serif;
-    --font-display: 'Playfair Display', serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
 
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(270 80% 60% / 0.4);
-    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
-    --shadow-elevated: 0 16px 48px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 60px hsl(265 85% 58% / 0.3);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 16px 48px hsl(0 0% 0% / 0.5);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -61,11 +58,6 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 100%;
   }
 }
 
@@ -79,7 +71,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
   }
 
@@ -105,7 +97,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    padding: 2px;
+    padding: 1px;
     background: var(--gradient-border);
     border-radius: inherit;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -119,16 +111,13 @@
   }
 
   .card-elevated {
-    @apply bg-card rounded-2xl p-6;
+    @apply rounded-2xl p-6;
+    background: var(--gradient-card);
     box-shadow: var(--shadow-card);
   }
 
   .section-title {
     @apply text-4xl md:text-5xl font-bold mb-4;
-  }
-
-  .section-subtitle {
-    @apply text-lg text-muted-foreground mb-8;
   }
 
   .highlight-box {
@@ -137,47 +126,51 @@
     color: white;
   }
 
-  .pdf-page {
-    @apply bg-background min-h-screen p-8 md:p-12 lg:p-16;
-    page-break-after: always;
-    break-after: page;
-  }
-
-  .pdf-page:last-child {
-    page-break-after: avoid;
-    break-after: avoid;
-  }
-
-  /* Abstract shapes */
-  .abstract-shape {
-    position: absolute;
-    pointer-events: none;
-    opacity: 0.6;
+  .page-section {
+    @apply min-h-screen flex flex-col justify-center relative overflow-hidden px-6 md:px-12 lg:px-20 py-16;
   }
 
   .blob-purple {
-    background: radial-gradient(ellipse, hsl(270 80% 50% / 0.4) 0%, transparent 70%);
-    filter: blur(60px);
-  }
-
-  .blob-pink {
-    background: radial-gradient(ellipse, hsl(300 100% 60% / 0.3) 0%, transparent 70%);
+    position: absolute;
+    pointer-events: none;
+    background: radial-gradient(ellipse, hsl(265 85% 50% / 0.25) 0%, transparent 70%);
     filter: blur(80px);
   }
 
-  /* Print styles */
+  .blob-pink {
+    position: absolute;
+    pointer-events: none;
+    background: radial-gradient(ellipse, hsl(290 100% 55% / 0.15) 0%, transparent 70%);
+    filter: blur(100px);
+  }
+
+  /* Grid pattern overlay */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(265 85% 58% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(265 85% 58% / 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Noise texture */
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
   @media print {
-    .pdf-page {
+    .page-section {
       padding: 1in;
       min-height: 0;
-      height: auto;
     }
-
     .no-print {
       display: none !important;
     }
-
-    .abstract-shape {
+    .blob-purple, .blob-pink {
       display: none;
     }
   }
@@ -187,12 +180,13 @@
   .animation-delay-150 {
     animation-delay: 150ms;
   }
-
   .animation-delay-300 {
     animation-delay: 300ms;
   }
-
   .animation-delay-500 {
     animation-delay: 500ms;
+  }
+  .animation-delay-700 {
+    animation-delay: 700ms;
   }
 }
