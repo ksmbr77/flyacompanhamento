@@ -65,7 +65,7 @@ const ServicesPage = () => {
             Os 3 Pilares do <span className="gradient-text">Crescimento</span>
           </h2>
           <p className={`reveal animation-delay-200 ${isVisible ? 'visible' : ''} text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base`}>
-            Um sistema integrado que trabalha em todas as frentes do seu negócio — da geração de demanda até o posicionamento da marca.
+            Um sistema que será implementado diretamente na sua empresa — da geração de demanda até o posicionamento da sua marca.
           </p>
         </div>
 
