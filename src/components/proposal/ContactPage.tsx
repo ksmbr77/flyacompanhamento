@@ -1,30 +1,36 @@
 import flyLogo from "@/assets/fly-logo.png";
-import { Globe, Instagram, MessageCircle } from "lucide-react";
+import { Globe, Instagram, MessageCircle, ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const contacts = [
   { icon: <Globe className="w-5 h-5" />, label: "Website", value: "flyagency.pro", href: "https://flyagency.pro" },
   { icon: <Instagram className="w-5 h-5" />, label: "Instagram", value: "@flyagency.digital", href: "https://instagram.com/flyagency.digital" },
-  { icon: <MessageCircle className="w-5 h-5" />, label: "WhatsApp", value: "Agendar Consultoria", href: "https://wa.link/r4rqk9" },
+  { icon: <MessageCircle className="w-5 h-5" />, label: "WhatsApp", value: "Falar com a equipe", href: "https://wa.link/r4rqk9" },
 ];
 
 const ContactPage = () => {
-  return (
-    <section className="page-section grid-pattern" id="contato">
-      <div className="blob-purple w-[700px] h-[700px] -top-40 -left-40" />
-      <div className="blob-pink w-[600px] h-[600px] -bottom-40 -right-40" />
+  const { ref, isVisible } = useScrollAnimation();
 
-      <div className="relative z-10 text-center max-w-xl mx-auto w-full">
-        <div className="mb-8 animate-fade-in">
-          <img src={flyLogo} alt="Fly Agency Logo" className="w-36 mx-auto drop-shadow-2xl" />
+  return (
+    <section className="page-section grid-pattern" id="contato" ref={ref}>
+      <div className="blob-purple w-[700px] h-[700px] -top-60 -left-40" />
+      <div className="blob-pink w-[700px] h-[700px] -bottom-60 -right-40" />
+
+      <div className="relative z-10 text-center max-w-lg mx-auto w-full">
+        {/* Logo */}
+        <div className={`reveal ${isVisible ? 'visible' : ''} mb-8`}>
+          <img src={flyLogo} alt="Fly Agency Logo" className="w-28 sm:w-36 mx-auto drop-shadow-2xl" />
         </div>
 
-        <h2 className="text-3xl md:text-4xl font-black mb-3 animate-fade-in animation-delay-150">
-          Vamos <span className="gradient-text">começar?</span>
+        {/* CTA */}
+        <h2 className={`reveal animation-delay-100 ${isVisible ? 'visible' : ''} text-2xl sm:text-3xl md:text-4xl font-black mb-3`}>
+          Pronto para <span className="gradient-text">escalar?</span>
         </h2>
-        <p className="text-muted-foreground mb-10 animate-fade-in animation-delay-300">
-          Agende uma consultoria gratuita e descubra como escalar seu negócio.
+        <p className={`reveal animation-delay-200 ${isVisible ? 'visible' : ''} text-muted-foreground text-sm sm:text-base mb-10`}>
+          Agende uma consultoria gratuita e descubra como transformar seu negócio nos próximos 90 dias.
         </p>
 
+        {/* Contact Links */}
         <div className="space-y-3 mb-10">
           {contacts.map((c, idx) => (
             <a
@@ -32,32 +38,34 @@ const ContactPage = () => {
               href={c.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-all group animate-fade-in"
-              style={{ animationDelay: `${(idx + 2) * 120}ms` }}
+              className={`reveal ${isVisible ? 'visible' : ''} flex items-center gap-4 p-4 rounded-xl bg-card/60 border border-border/40 hover:border-primary/30 hover:bg-card/80 transition-all duration-400 group`}
+              style={{ transitionDelay: `${(idx + 2) * 100}ms` }}
             >
-              <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 shrink-0">
                 {c.icon}
               </div>
               <div className="text-left flex-1">
                 <p className="text-xs text-muted-foreground">{c.label}</p>
                 <p className="font-semibold text-sm">{c.value}</p>
               </div>
+              <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
             </a>
           ))}
         </div>
 
-        {/* CTA */}
+        {/* Main CTA */}
         <a
           href="https://wa.link/r4rqk9"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-10 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity glow-effect text-lg animate-fade-in animation-delay-700"
+          className={`reveal animation-delay-600 ${isVisible ? 'visible' : ''} inline-flex items-center gap-2 px-10 py-4 rounded-xl font-bold text-white text-base sm:text-lg transition-all duration-300 hover:scale-105 glow-effect animate-glow-pulse`}
+          style={{ background: 'var(--gradient-primary)' }}
         >
           Aprovar Proposta →
         </a>
 
-        <p className="mt-10 text-muted-foreground text-xs">
-          © 2025 Fly Agency Digital • Todos os direitos reservados
+        <p className={`reveal animation-delay-700 ${isVisible ? 'visible' : ''} mt-12 text-muted-foreground text-xs`}>
+          © 2025 Fly Agency Digital · Todos os direitos reservados
         </p>
       </div>
     </section>

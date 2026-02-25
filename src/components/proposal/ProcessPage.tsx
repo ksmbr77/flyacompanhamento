@@ -1,70 +1,117 @@
-import { Check } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Check, Sparkles, ArrowRight } from "lucide-react";
 
 const ProcessPage = () => {
-  return (
-    <section className="page-section grid-pattern" id="investimento">
-      <div className="blob-purple w-[600px] h-[600px] top-1/3 -left-60" />
-      <div className="blob-pink w-[500px] h-[500px] -bottom-20 right-0" />
+  const { ref, isVisible } = useScrollAnimation();
 
-      <div className="relative z-10 max-w-3xl mx-auto w-full text-center">
-        <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3 animate-fade-in">Investimento</p>
-        <h2 className="text-4xl md:text-5xl font-black mb-4 animate-fade-in animation-delay-150">
-          Quanto <span className="gradient-text">Custa?</span>
-        </h2>
-        <p className="text-muted-foreground mb-12 max-w-xl mx-auto animate-fade-in animation-delay-300">
-          Investimento transparente com retorno previsível. Escolha a forma de pagamento ideal para você.
-        </p>
+  const features = [
+    "3 Pilares completos integrados",
+    "Setup + Infraestrutura total",
+    "Exclusividade regional do segmento",
+    "Suporte prioritário dedicado",
+    "Relatórios quinzenais detalhados",
+    "Grupo exclusivo no WhatsApp",
+    "Treinamento comercial completo",
+    "Reuniões estratégicas quinzenais",
+  ];
+
+  return (
+    <section className="page-section grid-pattern" id="investimento" ref={ref}>
+      <div className="blob-purple w-[700px] h-[700px] top-1/4 -left-60" />
+      <div className="blob-pink w-[600px] h-[600px] -bottom-40 right-0" />
+
+      <div className="relative z-10 max-w-5xl mx-auto w-full">
+        {/* Header */}
+        <div className="mb-14 text-center">
+          <p className={`reveal ${isVisible ? 'visible' : ''} text-primary text-xs sm:text-sm font-semibold tracking-widest uppercase mb-4`}>
+            Investimento
+          </p>
+          <h2 className={`reveal animation-delay-100 ${isVisible ? 'visible' : ''} text-3xl sm:text-4xl md:text-5xl font-black mb-4`}>
+            Quanto <span className="gradient-text">Custa?</span>
+          </h2>
+          <p className={`reveal animation-delay-200 ${isVisible ? 'visible' : ''} text-muted-foreground max-w-xl mx-auto text-sm sm:text-base`}>
+            Investimento transparente e acessível. Escolha a melhor forma de pagamento.
+          </p>
+        </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-10">
           {/* Monthly */}
-          <div className="card-elevated gradient-border p-8 animate-fade-in animation-delay-300">
-            <div className="relative z-10">
-              <p className="text-sm text-muted-foreground mb-1 uppercase tracking-wider">Mensal</p>
-              <div className="flex items-baseline justify-center gap-1 mb-2">
-                <span className="text-sm text-muted-foreground">R$</span>
-                <span className="text-5xl font-black gradient-text">2.300</span>
-                <span className="text-muted-foreground">/mês</span>
+          <div className={`reveal-left ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '300ms' }}>
+            <div className="h-full p-7 sm:p-8 rounded-2xl bg-card/80 border border-border/50 hover:border-primary/20 transition-all duration-500">
+              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-5 font-medium">Mensal</p>
+              
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-sm text-muted-foreground font-medium">R$</span>
+                <span className="text-5xl sm:text-6xl font-black gradient-text tracking-tight">2.300</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-6">Contrato mínimo de 90 dias</p>
+              <p className="text-sm text-muted-foreground mb-8">por mês · contrato de 3 meses</p>
 
-              <div className="space-y-3 text-left">
-                {["3 Pilares completos", "Setup + Infraestrutura", "Exclusividade regional", "Suporte prioritário", "Relatórios quinzenais"].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm">
+              <div className="space-y-3 mb-8">
+                {features.slice(0, 6).map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 text-sm">
                     <Check className="w-4 h-4 text-primary shrink-0" />
-                    <span>{item}</span>
+                    <span className="text-muted-foreground">{item}</span>
                   </div>
                 ))}
               </div>
+
+              <a
+                href="https://wa.link/r4rqk9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border border-primary/40 text-primary font-semibold text-sm hover:bg-primary/10 transition-all duration-300"
+              >
+                Quero esse plano <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
-          {/* One-time */}
-          <div className="relative card-elevated p-8 animate-fade-in animation-delay-500" style={{ background: 'linear-gradient(145deg, hsl(265 40% 16%), hsl(240 10% 6%))' }}>
-            <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase">
-              Melhor oferta
-            </div>
-            <p className="text-sm text-muted-foreground mb-1 uppercase tracking-wider">À Vista</p>
-            <div className="flex items-baseline justify-center gap-1 mb-2">
-              <span className="text-sm text-muted-foreground">R$</span>
-              <span className="text-5xl font-black gradient-text">6.000</span>
-            </div>
-            <p className="text-sm text-muted-foreground mb-6">Pagamento único · 90 dias</p>
-
-            <div className="space-y-3 text-left">
-              {["Tudo do plano mensal", "Economia de R$ 900", "Prioridade no onboarding", "Bônus: Consultoria extra", "Garantia estendida"].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm">
-                  <Check className="w-4 h-4 text-primary shrink-0" />
-                  <span>{item}</span>
+          {/* À Vista */}
+          <div className={`reveal-right ${isVisible ? 'visible' : ''}`} style={{ transitionDelay: '400ms' }}>
+            <div className="h-full relative p-7 sm:p-8 rounded-2xl border border-primary/30 overflow-hidden transition-all duration-500 hover:border-primary/50" style={{ background: 'var(--gradient-card)' }}>
+              {/* Best offer badge */}
+              <div className="absolute top-0 right-0">
+                <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-bl-xl text-xs font-bold uppercase" style={{ background: 'var(--gradient-primary)' }}>
+                  <Sparkles className="w-3 h-3" />
+                  Melhor Oferta
                 </div>
-              ))}
+              </div>
+
+              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-5 font-medium">À Vista</p>
+              
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-sm text-muted-foreground font-medium">R$</span>
+                <span className="text-5xl sm:text-6xl font-black gradient-text tracking-tight">6.000</span>
+              </div>
+              <p className="text-sm text-muted-foreground mb-2">pagamento único · 3 meses</p>
+              <p className="text-xs text-primary font-semibold mb-8">Economia de R$ 900 ✨</p>
+
+              <div className="space-y-3 mb-8">
+                {features.map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 text-sm">
+                    <Check className="w-4 h-4 text-primary shrink-0" />
+                    <span className="text-muted-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://wa.link/r4rqk9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-bold text-white text-sm transition-all duration-300 hover:scale-[1.02] glow-effect"
+                style={{ background: 'var(--gradient-primary)' }}
+              >
+                Quero essa oferta <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
 
         {/* Note */}
-        <p className="text-sm text-muted-foreground animate-fade-in animation-delay-700">
-          + Investimento em anúncios à parte (recomendado: R$ 1.200 – R$ 2.000/mês)
+        <p className={`reveal animation-delay-600 ${isVisible ? 'visible' : ''} text-center text-xs sm:text-sm text-muted-foreground`}>
+          + Investimento em anúncios à parte (recomendado: R$ 1.200 – R$ 2.000/mês para resultados consistentes)
         </p>
       </div>
     </section>
