@@ -24,7 +24,7 @@ const ContactPage = () => {
 
         {/* CTA */}
         <h2 className={`reveal animation-delay-100 ${isVisible ? 'visible' : ''} text-2xl sm:text-3xl md:text-4xl font-black mb-3`}>
-          Pronto para <span className="gradient-text">escalar?</span>
+          Vamos transformar seu <span className="gradient-text">negócio?</span>
         </h2>
         <p className={`reveal animation-delay-200 ${isVisible ? 'visible' : ''} text-muted-foreground text-sm sm:text-base mb-10`}>
           Agende uma consultoria gratuita e descubra como transformar seu negócio nos próximos 90 dias.
@@ -65,7 +65,7 @@ const ContactPage = () => {
         </a>
 
         <p className={`reveal animation-delay-700 ${isVisible ? 'visible' : ''} mt-12 text-muted-foreground text-xs`}>
-          © 2025 Fly Agency Digital · Todos os direitos reservados
+          © 2026 Fly Agency Digital · Todos os direitos reservados
         </p>
       </div>
     </section>
