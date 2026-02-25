@@ -13,7 +13,7 @@ const navItems = [
   { label: "Diagnóstico", href: "#diagnostico" },
   { label: "Pilares", href: "#pilares" },
   { label: "Estratégia", href: "#estrategia" },
-  
+  { label: "Investimento", href: "#investimento" },
 ];
 
 const Index = () => {
