@@ -27,8 +27,8 @@ const pillars = [
     items: [
       { icon: <Phone className="w-3.5 h-3.5" />, text: "Treinamento de atendimento via WhatsApp" },
       { icon: <UserCheck className="w-3.5 h-3.5" />, text: "Scripts de abordagem e fechamento" },
-      { icon: <BrainCircuit className="w-3.5 h-3.5" />, text: "Técnicas de persuasão e follow-up" },
-      { icon: <RefreshCw className="w-3.5 h-3.5" />, text: "Processos de recuperação de leads" },
+      { icon: <BrainCircuit className="w-3.5 h-3.5" />, text: "Técnicas de follow-up e acompanhamento" },
+      { icon: <RefreshCw className="w-3.5 h-3.5" />, text: "Implantação de funil de vendas completo" },
     ],
   },
   {
@@ -37,12 +37,12 @@ const pillars = [
     color: "from-accent to-primary-glow",
     title: "Posicionamento Growth",
     subtitle: "Branding & Autoridade Digital",
-    description: "Posicionamos sua marca como referência na sua região e segmento de atuação.",
+    description: "Elevamos o branding e posicionamento da sua marca com insights estratégicos para se destacar no mercado.",
     items: [
-      { icon: <Megaphone className="w-3.5 h-3.5" />, text: "Posicionamento estratégico de marca" },
-      { icon: <Eye className="w-3.5 h-3.5" />, text: "Presença digital consolidada" },
-      { icon: <Layers className="w-3.5 h-3.5" />, text: "Conteúdo estratégico para autoridade" },
-      { icon: <BarChart3 className="w-3.5 h-3.5" />, text: "Crescimento estruturado e mensurável" },
+      { icon: <Megaphone className="w-3.5 h-3.5" />, text: "Melhoria de branding e identidade visual" },
+      { icon: <Eye className="w-3.5 h-3.5" />, text: "Insights estratégicos de posicionamento" },
+      { icon: <Layers className="w-3.5 h-3.5" />, text: "Análise de concorrência e diferenciação" },
+      { icon: <BarChart3 className="w-3.5 h-3.5" />, text: "Fortalecimento de autoridade no segmento" },
     ],
   },
 ];
