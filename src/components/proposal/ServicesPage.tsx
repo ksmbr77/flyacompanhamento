@@ -1,100 +1,91 @@
-import { Megaphone, LineChart, Video, Zap, Target, Palette } from "lucide-react";
+import { Target, MessageCircle, Palette, ChevronRight } from "lucide-react";
 
-interface ServiceItemProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const ServiceItem = ({ icon, title, description }: ServiceItemProps) => (
-  <div className="flex gap-4 items-start group">
-    <div className="w-12 h-12 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-      {icon}
-    </div>
-    <div>
-      <h3 className="text-lg font-bold mb-1">{title}</h3>
-      <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
-    </div>
-  </div>
-);
+const pillars = [
+  {
+    number: "01",
+    icon: <Target className="w-7 h-7" />,
+    title: "Geração de Demanda",
+    subtitle: "Gestão de Tráfego Pago (Meta Ads)",
+    items: [
+      "Planejamento de todas as campanhas",
+      "Otimização Diária e Semanais",
+      "Testes e Validação nas campanhas",
+      "Remarketing",
+      "Roteiros para Anúncios",
+    ],
+  },
+  {
+    number: "02",
+    icon: <MessageCircle className="w-7 h-7" />,
+    title: "Conversão",
+    subtitle: "Treinamento Comercial",
+    items: [
+      "WhatsApp Business otimizado",
+      "Scripts de atendimento",
+      "Processos de follow-up",
+      "Técnicas de fechamento",
+    ],
+  },
+  {
+    number: "03",
+    icon: <Palette className="w-7 h-7" />,
+    title: "Posicionamento Growth",
+    subtitle: "Branding & Autoridade",
+    items: [
+      "Posicionamento de marca",
+      "Identidade visual digital",
+      "Conteúdo estratégico",
+      "Presença nas redes sociais",
+    ],
+  },
+];
 
 const ServicesPage = () => {
-  const services = [
-    {
-      icon: <Target className="w-6 h-6 text-white" />,
-      title: "Tráfego Pago",
-      description: "Campanhas estratégicas em Google Ads, Meta Ads e TikTok Ads para maximizar seu retorno sobre o investimento e alcançar clientes qualificados.",
-    },
-    {
-      icon: <Zap className="w-6 h-6 text-white" />,
-      title: "Automação e Funis",
-      description: "Automatize suas vendas com funis inteligentes e Inteligência Artificial, convertendo leads em clientes de forma previsível.",
-    },
-    {
-      icon: <LineChart className="w-6 h-6 text-white" />,
-      title: "Marketing Estratégico",
-      description: "Estratégias personalizadas de marketing digital para impulsionar e destacar sua marca na sua região.",
-    },
-    {
-      icon: <Video className="w-6 h-6 text-white" />,
-      title: "Produção de Vídeos",
-      description: "Conteúdo audiovisual profissional que engaja seu público e fortalece sua presença digital.",
-    },
-    {
-      icon: <Palette className="w-6 h-6 text-white" />,
-      title: "Design Gráfico",
-      description: "Criação de materiais visuais para redes sociais e publicidade, focados em engajamento e conversão.",
-    },
-    {
-      icon: <Megaphone className="w-6 h-6 text-white" />,
-      title: "Gestão de Anúncios",
-      description: "Criação e gestão de anúncios online para atrair público qualificado e gerar resultados rápidos via Meta Ads e Google Ads.",
-    },
-  ];
-
   return (
-    <section className="pdf-page relative overflow-hidden">
-      {/* Abstract shapes */}
-      <div className="abstract-shape blob-pink w-[600px] h-[600px] -top-40 -left-40" />
-      <div className="abstract-shape blob-purple w-[400px] h-[400px] bottom-0 right-0" />
+    <section className="page-section grid-pattern" id="pilares">
+      <div className="blob-pink w-[700px] h-[700px] -top-40 -left-40" />
+      <div className="blob-purple w-[500px] h-[500px] bottom-0 right-0" />
 
-      <div className="relative z-10 max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="mb-12">
-          <h2 className="section-title">
-            Serviços <span className="gradient-text">Oferecidos</span>
+      <div className="relative z-10 max-w-6xl mx-auto w-full">
+        <div className="mb-14 text-center">
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3 animate-fade-in">O que você recebe</p>
+          <h2 className="text-4xl md:text-5xl font-black animate-fade-in animation-delay-150">
+            Os 3 <span className="gradient-text">Pilares</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-primary rounded-full" />
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="animate-slide-in-left"
-              style={{ animationDelay: `${index * 100}ms` }}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {pillars.map((pillar, idx) => (
+            <div
+              key={idx}
+              className="card-elevated gradient-border group hover:scale-[1.02] transition-transform duration-300 animate-fade-in"
+              style={{ animationDelay: `${(idx + 1) * 150}ms` }}
             >
-              <ServiceItem {...service} />
+              <div className="relative z-10">
+                {/* Number */}
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="text-3xl font-black text-primary/30">
+                    {pillar.number}
+                  </span>
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white">
+                    {pillar.icon}
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold mb-1">{pillar.title}</h3>
+                <p className="text-sm text-muted-foreground mb-5">{pillar.subtitle}</p>
+
+                <div className="space-y-2.5">
+                  {pillar.items.map((item, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm">
+                      <ChevronRight className="w-3.5 h-3.5 text-primary shrink-0" />
+                      <span className="text-muted-foreground group-hover:text-foreground transition-colors">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
-        </div>
-
-        {/* Platforms */}
-        <div className="mt-12 card-elevated gradient-border">
-          <div className="relative z-10">
-            <h3 className="text-xl font-bold mb-4 text-center">Plataformas de Anúncios</h3>
-            <div className="flex flex-wrap justify-center gap-6">
-              {["Meta Ads", "Google Ads", "TikTok Ads", "YouTube Ads"].map((platform, idx) => (
-                <div 
-                  key={idx}
-                  className="px-6 py-3 bg-secondary rounded-full text-sm font-medium"
-                >
-                  {platform}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

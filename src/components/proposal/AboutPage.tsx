@@ -1,76 +1,66 @@
-import flyLogo from "@/assets/fly-logo.png";
-import { Users, TrendingUp, Award, Heart } from "lucide-react";
+import { MessageSquare, BarChart3, Settings, Shield, MapPin, CheckCircle2 } from "lucide-react";
+
+const extras = [
+  {
+    icon: <MessageSquare className="w-5 h-5" />,
+    title: "Grupo Exclusivo no WhatsApp",
+    desc: "Comunicação direta e ágil com a equipe.",
+  },
+  {
+    icon: <BarChart3 className="w-5 h-5" />,
+    title: "Relatórios Completos",
+    desc: "Métricas detalhadas e acompanhamento quinzenal.",
+  },
+  {
+    icon: <Settings className="w-5 h-5" />,
+    title: "Setup + Infraestrutura",
+    desc: "Estruturação completa do seu ecossistema digital.",
+  },
+  {
+    icon: <Shield className="w-5 h-5" />,
+    title: "Suporte Prolongado e Prioritário",
+    desc: "Garantia de atendimento dedicado e consultivo.",
+  },
+  {
+    icon: <MapPin className="w-5 h-5" />,
+    title: "Exclusividade do Segmento",
+    desc: "Não atendemos concorrentes diretos na sua região.",
+  },
+  {
+    icon: <CheckCircle2 className="w-5 h-5" />,
+    title: "Acompanhamento Estratégico",
+    desc: "Reuniões regulares de alinhamento e otimização.",
+  },
+];
 
 const AboutPage = () => {
-  const highlights = [
-    { icon: <Users className="w-6 h-6" />, label: "Equipe especializada e dedicada" },
-    { icon: <TrendingUp className="w-6 h-6" />, label: "Resultados mensuráveis e escaláveis" },
-    { icon: <Award className="w-6 h-6" />, label: "Estratégias personalizadas" },
-    { icon: <Heart className="w-6 h-6" />, label: "Atendimento próximo e consultivo" },
-  ];
-
   return (
-    <section className="pdf-page relative overflow-hidden">
-      {/* Abstract shapes */}
-      <div className="abstract-shape blob-purple w-[500px] h-[500px] -top-20 right-0" />
-      <div className="abstract-shape blob-pink w-[400px] h-[400px] bottom-40 -left-40" />
+    <section className="page-section grid-pattern" id="incluso">
+      <div className="blob-purple w-[600px] h-[600px] -top-20 right-0" />
+      <div className="blob-pink w-[400px] h-[400px] bottom-20 -left-40" />
 
-      <div className="relative z-10 max-w-5xl mx-auto">
-        {/* Header with Logo */}
-        <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
-          <div className="flex-1 text-center md:text-left">
-            <h2 className="section-title">
-              Quem <span className="gradient-text">Somos?</span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-primary rounded-full mx-auto md:mx-0" />
-          </div>
-          <div className="shrink-0">
-            <img 
-              src={flyLogo} 
-              alt="Fly Agency Logo" 
-              className="w-48 md:w-56 drop-shadow-2xl animate-float"
-            />
-          </div>
+      <div className="relative z-10 max-w-6xl mx-auto w-full">
+        <div className="mb-14 text-center">
+          <p className="text-primary text-sm font-semibold tracking-widest uppercase mb-3 animate-fade-in">Tudo incluso</p>
+          <h2 className="text-4xl md:text-5xl font-black animate-fade-in animation-delay-150">
+            O que está <span className="gradient-text">Incluído</span>
+          </h2>
         </div>
 
-        {/* Description */}
-        <div className="card-elevated gradient-border mb-8">
-          <div className="relative z-10 space-y-4">
-            <p className="text-lg leading-relaxed">
-              A <span className="text-primary font-bold">Fly Agency</span> é uma assessoria de marketing especializada em{" "}
-              <span className="font-semibold">soluções estratégicas</span> para comunicação e marketing digital.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Somos seu <span className="highlight-box">parceiro de crescimento</span>, focados em gerar resultados previsíveis e duradouros para o seu negócio. Nossa abordagem combina estratégia, criatividade e tecnologia.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Nosso objetivo é <span className="font-semibold text-primary">potencializar a presença online e offline</span> de nossos clientes, criando conteúdos e campanhas que geram resultados reais, com mensuração financeira sobre o projeto.
-            </p>
-          </div>
-        </div>
-
-        {/* Highlights Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {highlights.map((item, idx) => (
-            <div 
-              key={idx} 
-              className="text-center p-4 rounded-xl bg-card/50 hover:bg-card transition-colors animate-scale-in"
-              style={{ animationDelay: `${idx * 100}ms` }}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {extras.map((item, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-2xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors group animate-fade-in"
+              style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
-              <div className="w-12 h-12 rounded-full bg-gradient-primary flex items-center justify-center mx-auto mb-3 text-white">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 text-primary group-hover:bg-primary/20 transition-colors">
                 {item.icon}
               </div>
-              <p className="text-sm font-medium">{item.label}</p>
+              <h3 className="font-bold mb-1">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
             </div>
           ))}
-        </div>
-
-        {/* Quote */}
-        <div className="mt-12 text-center">
-          <blockquote className="text-2xl font-display italic text-muted-foreground">
-            "A partir de agora, seu maior problema será{" "}
-            <span className="gradient-text font-semibold not-italic">ter clientes demais</span>"
-          </blockquote>
         </div>
       </div>
     </section>
